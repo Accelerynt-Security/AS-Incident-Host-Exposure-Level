@@ -50,26 +50,18 @@ Click on the “**Edit**” button. This will bring us into the Logic Apps Desig
 
 ![ExposureLevel_Deploy_4](Images/ExposureLevel_Deploy_4.png)
 
-The first and seconds steps labeled "**Connections**" use a shared azuresentinel connection created during the deployment of this playbook. Before the playbook can be run, this connection will either need to be authorized, or an existing authorized connection may be alternatively selected for each.  
+Expand the step labeled "**Condition - Check for Hosts**". The sixth step labeled "**Connections**" uses a wdatp connection, which is responsible for communicating with Microsoft Defender. Before the playbook can be run, this connection will either need to be authorized, or an existing authorized connection may be alternatively selected for each.  
 
 ![ExposureLevel_Deploy_5](Images/ExposureLevel_Deploy_5.png)
 
-To validate the azuresentinel connection created for this playbook, expand either of the "**Connections**" steps and click the exclamation point icon next to the name matching the playbook.
+To validate the wdatp connection created for this playbook, expand the "**Connections**" step and click the exclamation point icon next to the name matching the playbook.
                                                                                                 
 ![ExposureLevel_Deploy_6](Images/ExposureLevel_Deploy_6.png)
 
 When prompted, sign in to validate the connection.                                                                                                
                                                                                                 
-![ExposureLevel_Deploy_7](Images/ExposureLevel_Deploy_7.png)                                                                                                                                                                                                                                                   
-Since the first two steps share the same connection, there is no need to repeat the process here. Simply refresh the page to ensure the first two steps now have valid connections.
+![ExposureLevel_Deploy_7](Images/ExposureLevel_Deploy_7.png)
 
-This process will need to be repeated for the two wdatp connections, responsible for communicating with Microsoft Defender. Expand the step labeled "**Condition - Check for Hosts**"
-
-![ExposureLevel_Deploy_8](Images/ExposureLevel_Deploy_8.png)
-
-Repeat the same process above for the connection used in the indicated steps.
-
-![ExposureLevel_Deploy_9](Images/ExposureLevel_Deploy_9.png)
 
 #
 ### Running the Playbook 
