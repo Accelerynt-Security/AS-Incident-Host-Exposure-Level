@@ -12,8 +12,26 @@ This playbook is intended to be run from a Microsoft Sentinel Incident. It will 
 ![ExposureLevel_Demo](Images/ExposureLevel_Demo.png)
 
 #
-### Deployment                                                                                                         
-                                                                                                        
+### Prerequisites
+
+After deployment, you will need to give the system assigned managed identity the "**Microsoft Sentinel Contributor**" role. This will enable it to add comments to incidents. Run the following commands in PowerShell, replacing the managed identity object id and resource group name. You can find the managed identity object id on the Identity blade under Settings for the Logic App.
+
+![ExposureLevel_Prereq](Images/ExposureLevel_Prereq.png)
+
+You will not need to run the Install-Module if this has been done before. More documentation on this module can be found here:
+
+https://learn.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-9.3.0
+
+```powershell
+Install-Module -Name Az
+Connect-AzAccount
+New-AzRoleAssignment -ObjectId <logic app managed identity object id> -RoleDefinitionName "Microsoft Sentinel Contributor" -ResourceGroupName "<logic app resource group name>"
+```
+
+
+#
+### Deployment
+
 To configure and deploy this playbook:
  
 Open your browser and ensure you are logged into your Microsoft Sentinel workspace. In a separate tab, open the link to our playbook on the Accelerynt Security GitHub Repository:
